@@ -144,7 +144,31 @@ def draw_boxes(img, bbox, names,object_id, identities=None, offset=(0, 0)):
 
         # get ID of object
         id = int(identities[i]) if identities is not None else 0
-        insult_list = ['gobshite','shitehawk','west brit','gom','gowlbag','ganch','melt','schnake','messer','shaper','head-the-ball','dry shite','gowl','yer man','langer','geebag','lickarse','dirtbird','gowl','chancer','dose','spoofer','headbanger','hoor','gowl','wagon','thick','bollix','dope','eejit','sap','pox','flute','fridget','bowsie','culchie','gowl','jackeen','mickey dazzler','dosser','gouger']
+        insult_list = ['gobshite','shitehawk','west brit','gom','gowlbag','ganch','melt','schnake','messer','shaper',\
+                       'head-the-ball','dry shite','gowl','yer man','langer','geebag','lickarse','dirtbird','gowl','chancer',\
+                       'dose','spoofer','headbanger','hoor','gowl','wagon','thick','bollix','dope','eejit','sap','pox','flute',\
+                       'fridget','bowsie','culchie','gowl','jackeen','mickey dazzler','dosser','gouger','blow-in','clown','gombeen',\
+                       'sleeveen','lick','gurrier',\
+                      'gobshite','shitehawk','west brit','gom','gowlbag','ganch','melt','schnake','messer','shaper',\
+                       'head-the-ball','dry shite','gowl','yer man','langer','geebag','lickarse','dirtbird','gowl','chancer',\
+                       'dose','spoofer','headbanger','hoor','gowl','wagon','thick','bollix','dope','eejit','sap','pox','flute',\
+                       'fridget','bowsie','culchie','gowl','jackeen','mickey dazzler','dosser','gouger','blow-in','clown','gombeen',\
+                       'sleeveen','lick','gurrier',\
+                      'gobshite','shitehawk','west brit','gom','gowlbag','ganch','melt','schnake','messer','shaper',\
+                       'head-the-ball','dry shite','gowl','yer man','langer','geebag','lickarse','dirtbird','gowl','chancer',\
+                       'dose','spoofer','headbanger','hoor','gowl','wagon','thick','bollix','dope','eejit','sap','pox','flute',\
+                       'fridget','bowsie','culchie','gowl','jackeen','mickey dazzler','dosser','gouger','blow-in','clown','gombeen',\
+                       'sleeveen','lick','gurrier',\
+                      'gobshite','shitehawk','west brit','gom','gowlbag','ganch','melt','schnake','messer','shaper',\
+                       'head-the-ball','dry shite','gowl','yer man','langer','geebag','lickarse','dirtbird','gowl','chancer',\
+                       'dose','spoofer','headbanger','hoor','gowl','wagon','thick','bollix','dope','eejit','sap','pox','flute',\
+                       'fridget','bowsie','culchie','gowl','jackeen','mickey dazzler','dosser','gouger','blow-in','clown','gombeen',\
+                       'sleeveen','lick','gurrier',\
+                      'gobshite','shitehawk','west brit','gom','gowlbag','ganch','melt','schnake','messer','shaper',\
+                       'head-the-ball','dry shite','gowl','yer man','langer','geebag','lickarse','dirtbird','gowl','chancer',\
+                       'dose','spoofer','headbanger','hoor','gowl','wagon','thick','bollix','dope','eejit','sap','pox','flute',\
+                       'fridget','bowsie','culchie','gowl','jackeen','mickey dazzler','dosser','gouger','blow-in','clown','gombeen',\
+                       'sleeveen','lick','gurrier']
         random_insult = insult_list[int(id)]
 
         # create new buffer for new object
@@ -165,7 +189,7 @@ def draw_boxes(img, bbox, names,object_id, identities=None, offset=(0, 0)):
             # generate dynamic thickness of trails
             thickness = int(np.sqrt(64 / float(i + i)) * 1.5)
             # draw trails
-            cv2.line(img, data_deque[id][i - 1], data_deque[id][i], color, thickness)
+            #cv2.line(img, data_deque[id][i - 1], data_deque[id][i], color, thickness)
     return img
 
 
