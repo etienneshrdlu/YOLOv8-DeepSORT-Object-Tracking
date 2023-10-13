@@ -131,6 +131,7 @@ def draw_boxes(img, bbox, names,object_id, identities=None, offset=(0, 0)):
       if key not in identities:
         data_deque.pop(key)
 
+     
     for i, box in enumerate(bbox):
         x1, y1, x2, y2 = [int(i) for i in box]
         x1 += offset[0]
@@ -143,13 +144,15 @@ def draw_boxes(img, bbox, names,object_id, identities=None, offset=(0, 0)):
 
         # get ID of object
         id = int(identities[i]) if identities is not None else 0
+        insult_list = ['gobshite','shitehawk','west brit','gom','gowlbag','ganch','melt','schnake','messer','shaper','head-the-ball','dry shite','gowl','yer man','langer','geebag','lickarse','dirtbird','gowl','chancer','dose','spoofer','headbanger','hoor','gowl','wagon','thick','bollix','dope','eejit','sap','pox','flute','fridget','bowsie','culchie','gowl','jackeen','mickey dazzler','dosser','gouger']
+        random_insult = insult_list[int(id)]
 
         # create new buffer for new object
         if id not in data_deque:  
           data_deque[id] = deque(maxlen= 64)
         color = compute_color_for_labels(object_id[i])
         obj_name = names[object_id[i]]
-        label = '{}{:d}'.format("", id) + ":"+ '%s' % (obj_name)
+        label = '{}{:d}'.format("", id) + ":"+ '%s' % (random_insult)
 
         # add center to buffer
         data_deque[id].appendleft(center)
