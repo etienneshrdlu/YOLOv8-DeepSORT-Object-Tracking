@@ -64,16 +64,12 @@ def compute_color_for_labels(label):
     """
     Simple function that adds fixed color depending on the class
     """
-    if label == 0: #person
-        color = (85,45,255)
-    elif label == 2: # Car
-        color = (222,82,175)
-    elif label == 3:  # Motobike
-        color = (0, 204, 255)
-    elif label == 5:  # Bus
-        color = (0, 149, 255)
+    if label == 0:  # Person
+        # Generate a random color
+        color = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
     else:
-        color = [int((p * (label ** 2 - label + 1)) % 255) for p in palette]
+        # Assign a different color for other labels (e.g., cars, motorcycles)
+        color = (85, 45, 255)  # You can customize this color as needed
     return tuple(color)
 
 def draw_border(img, pt1, pt2, color, thickness, r, d):
