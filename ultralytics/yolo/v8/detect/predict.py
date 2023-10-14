@@ -22,7 +22,7 @@ from collections import deque
 import numpy as np
 palette = (2 ** 11 - 1, 2 ** 15 - 1, 2 ** 20 - 1)
 data_deque = {}
-
+object_colors = {}
 deepsort = None
 
 def init_tracker():
@@ -60,17 +60,14 @@ def xyxy_to_tlwh(bbox_xyxy):
         tlwh_bboxs.append(tlwh_obj)
     return tlwh_bboxs
 
-def compute_color_for_labels(label):
+def compute_color_for_labels(label, object_id):
     """
-    Simple function that adds fixed color depending on the class
+    Assign a unique color to each object based on its ID.
     """
-    if label == 0:  # Person
-        # Generate a random color
-        color = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
-    else:
-        # Assign a different color for other labels (e.g., cars, motorcycles)
-        color = (85, 45, 255)  # You can customize this color as needed
-    return tuple(color)
+    if object_id not in object_colors:
+        # Generate a random color for the object and store it in the dictionary
+        object_colors[object_id] = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
+    return object_colors[object_id]
 
 def draw_border(img, pt1, pt2, color, thickness, r, d):
     x1,y1 = pt1
@@ -118,7 +115,7 @@ def UI_box(x, img, color=None, label=None, line_thickness=None):
 
 
 
-def draw_boxes(img, bbox, names,object_id, identities=None, offset=(0, 0)):
+def draw_boxes(img, bbox, names, object_id, identities=None, offset=(0, 0)):
     #cv2.line(img, line[0], line[1], (46,162,112), 3)
 
     height, width, _ = img.shape
@@ -170,7 +167,7 @@ def draw_boxes(img, bbox, names,object_id, identities=None, offset=(0, 0)):
         # create new buffer for new object
         if id not in data_deque:  
           data_deque[id] = deque(maxlen= 64)
-        color = compute_color_for_labels(object_id[i])
+        color = compute_color_for_labels(object_id[i], id)  # Use the object's color
         obj_name = names[object_id[i]]
         label = random_insult
 
