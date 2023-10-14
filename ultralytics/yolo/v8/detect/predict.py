@@ -74,7 +74,7 @@ def compute_color_for_labels(label):
         color = (0, 149, 255)
     else:
     """
-        color = [int((p * (label ** 2 - label + 1)) % 255) for p in palette]
+    color = [int((p * (label ** 2 - label + 1)) % 255) for p in palette]
     return tuple(color)
 
 def draw_border(img, pt1, pt2, color, thickness, r, d):
