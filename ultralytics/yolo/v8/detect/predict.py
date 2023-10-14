@@ -63,7 +63,7 @@ def xyxy_to_tlwh(bbox_xyxy):
 def compute_color_for_labels(label):
     """
     Simple function that adds fixed color depending on the class
-    
+    """
     if label == 0: #person
         color = (85,45,255)
     elif label == 2: # Car
@@ -73,8 +73,7 @@ def compute_color_for_labels(label):
     elif label == 5:  # Bus
         color = (0, 149, 255)
     else:
-    """
-    color = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
+        color = [int((p * (label ** 2 - label + 1)) % 255) for p in palette]
     return tuple(color)
 
 def draw_border(img, pt1, pt2, color, thickness, r, d):
