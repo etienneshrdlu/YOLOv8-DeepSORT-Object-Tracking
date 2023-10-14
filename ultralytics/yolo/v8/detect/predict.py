@@ -62,22 +62,19 @@ def xyxy_to_tlwh(bbox_xyxy):
 
 def compute_color_for_labels(label):
     """
-    Simple function that adds fixed color depending on the class
-    """
-    unique_colors = [
-    [255, 0, 0],    # Red
-    [0, 255, 0],    # Green
-    [0, 0, 255],    # Blue
-    [255, 255, 0],  # Yellow
-    [255, 0, 255],  # Magenta
-    [0, 255, 255],  # Cyan
-    [128, 0, 0],    # Maroon
-    [0, 128, 0],    # Olive
-    [0, 0, 128],    # Navy
-    [128, 128, 128]  # Gray
-    ]
-    color = unique_colors[object_id % len(unique_colors)]
-    return tuple(color)
+     Simple function that adds fixed color depending on the class
+     """
+     if label == 0: #person
+         color = (85,45,255)
+     elif label == 2: # Car
+         color = (222,82,175)
+     elif label == 3:  # Motobike
+         color = (0, 204, 255)
+     elif label == 5:  # Bus
+         color = (0, 149, 255)
+     else:
+         color = [int((p * (label ** 2 - label + 1)) % 255) for p in palette]
+     return tuple(color)
 
 def draw_border(img, pt1, pt2, color, thickness, r, d):
     x1,y1 = pt1
