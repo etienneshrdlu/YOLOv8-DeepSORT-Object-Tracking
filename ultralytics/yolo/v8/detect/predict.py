@@ -64,17 +64,16 @@ def compute_color_for_labels(label):
     """
     Simple function that adds fixed color depending on the class
     """
-    color_dict = {}  # Create a dictionary to map object IDs to colors
-
-    # In your object tracking loop:
-    for object_id, obj_data in tracked_objects.items():
-    if object_id not in color_dict:
-        # If the object is new, assign a unique color
-        color_dict[object_id] = [random.randint(0, 255) for _ in range(3)]
-
-    color = color_dict[object_id]  # Get the color associated with the object
-    # Now, use 'color' to draw the bounding box and label for this object
-    # ...
+    if label == 0: #person
+        color = (85,45,255)
+    elif label == 2: # Car
+        color = (222,82,175)
+    elif label == 3:  # Motobike
+        color = (0, 204, 255)
+    elif label == 5:  # Bus
+        color = (0, 149, 255)
+    else:
+        color = [int((p * (label ** 2 - label + 1)) % 255) for p in palette]
     return tuple(color)
 
 def draw_border(img, pt1, pt2, color, thickness, r, d):
