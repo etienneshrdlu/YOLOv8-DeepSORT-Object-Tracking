@@ -118,7 +118,7 @@ def UI_box(x, img, color=None, label=None, line_thickness=None):
 
         img = draw_border(img, (c1[0]-10, c1[1] - t_size[1] -10), (c1[0] + t_size[0]+10, c1[1]+10), color, 1, 8, 2)
 
-        cv2.putText(img, label, (c1[0], c1[1] - 2), 0, tl / 3, [225, 255, 255], font=FONT_HERSHEY_DUPLEX, thickness=tf, lineType=cv2.LINE_AA)
+        cv2.putText(img, label, (c1[0], c1[1] - 2), 0, tl / 3, [225, 255, 255], thickness=tf, lineType=cv2.LINE_AA)
 
 
 
