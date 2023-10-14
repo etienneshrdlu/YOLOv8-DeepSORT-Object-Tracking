@@ -176,7 +176,7 @@ def draw_boxes(img, bbox, names,object_id, identities=None, offset=(0, 0)):
           data_deque[id] = deque(maxlen= 64)
         color = compute_color_for_labels(object_id[i])
         obj_name = names[object_id[i]]
-        label = '{}{:d}'.format("", id) + ":"+ '%s' % (random_insult)
+        label = '{}{:d}'.format("", "") + ""+ '%s' % (random_insult)
 
         # add center to buffer
         data_deque[id].appendleft(center)
