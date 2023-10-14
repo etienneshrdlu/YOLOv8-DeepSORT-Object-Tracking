@@ -62,19 +62,19 @@ def xyxy_to_tlwh(bbox_xyxy):
 
 def compute_color_for_labels(label):
     """
-     Simple function that adds fixed color depending on the class
-     """
-     if label == 0: #person
-         color = (85,45,255)
-     elif label == 2: # Car
-         color = (222,82,175)
-     elif label == 3:  # Motobike
-         color = (0, 204, 255)
-     elif label == 5:  # Bus
-         color = (0, 149, 255)
-     else:
-         color = [int((p * (label ** 2 - label + 1)) % 255) for p in palette]
-     return tuple(color)
+    Simple function that adds fixed color depending on the class
+    """
+    if label == 0: #person
+        color = (85,45,255)
+    elif label == 2: # Car
+        color = (222,82,175)
+    elif label == 3:  # Motobike
+        color = (0, 204, 255)
+    elif label == 5:  # Bus
+        color = (0, 149, 255)
+    else:
+        color = [int((p * (label ** 2 - label + 1)) % 255) for p in palette]
+    return tuple(color)
 
 def draw_border(img, pt1, pt2, color, thickness, r, d):
     x1,y1 = pt1
@@ -118,7 +118,7 @@ def UI_box(x, img, color=None, label=None, line_thickness=None):
 
         img = draw_border(img, (c1[0]-10, c1[1] - t_size[1] -10), (c1[0] + t_size[0]+10, c1[1]+10), color, 1, 8, 2)
 
-        cv2.putText(img, label, (c1[0], c1[1] - 2), 0, tl / 3, [225, 255, 255], thickness=tf, lineType=cv2.LINE_AA)
+        cv2.putText(img, label, (c1[0], c1[1] - 2), 0, tl / 3, [225, 255, 255], fontFace=FONT_HERSHEY_DUPLEX, thickness=tf, lineType=cv2.LINE_AA)
 
 
 
