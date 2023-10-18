@@ -22,6 +22,21 @@ from collections import deque
 import numpy as np
 palette = (2 ** 11 - 1, 2 ** 15 - 1, 2 ** 20 - 1)
 data_deque = {}
+import random
+
+# Define a palette of 10 colors
+color_palette = [
+    (255, 0, 0),    # Red
+    (0, 255, 0),    # Green
+    (0, 0, 255),    # Blue
+    (255, 255, 0),  # Yellow
+    (255, 0, 255),  # Magenta
+    (0, 255, 255),  # Cyan
+    (128, 0, 0),    # Maroon
+    (0, 128, 0),    # Olive
+    (0, 0, 128),    # Navy
+    (128, 128, 0)   # Teal
+]
 object_colors = {}
 deepsort = None
 
@@ -60,13 +75,14 @@ def xyxy_to_tlwh(bbox_xyxy):
         tlwh_bboxs.append(tlwh_obj)
     return tlwh_bboxs
 
-def compute_color_for_labels(label, object_id):
+def compute_color_for_labels(object_id):
     """
     Assign a unique color to each object based on its ID.
     """
     if object_id not in object_colors:
-        # Generate a random color for the object and store it in the dictionary
-        object_colors[object_id] = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
+        # Use the object_id to determine the index for the color in the palette
+        color_index = object_id % len(color_palette)
+        object_colors[object_id] = color_palette[color_index]
     return object_colors[object_id]
 
 def draw_border(img, pt1, pt2, color, thickness, r, d):
