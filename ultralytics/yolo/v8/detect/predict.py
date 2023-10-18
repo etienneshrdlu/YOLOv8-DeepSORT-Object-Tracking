@@ -26,18 +26,15 @@ object_colors = {}
 deepsort = None
 import random
 
-# Define a palette of 10 colors
+# Define a palette of 7 colors
 color_palette = [
-    (255, 0, 0),    # Red
-    (0, 255, 0),    # Green
-    (0, 0, 255),    # Blue
-    (255, 255, 0),  # Yellow
-    (255, 0, 255),  # Magenta
-    (0, 255, 255),  # Cyan
-    (128, 0, 0),    # Maroon
-    (0, 128, 0),    # Olive
-    (0, 0, 128),    # Navy
-    (128, 128, 0)   # Teal
+    (238, 119, 51), # Orange
+    (0, 119, 187),  # Blue
+    (51, 187, 238),  # Cyan
+    (238, 51, 119),  # Magenta
+    (204, 51, 17),  # Red
+    (0, 153, 136),  # Teal
+    (187, 187, 187),    # Grey
 ]
 
 def init_tracker():
