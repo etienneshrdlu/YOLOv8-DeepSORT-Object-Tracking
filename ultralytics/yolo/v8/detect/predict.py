@@ -24,6 +24,21 @@ palette = (2 ** 11 - 1, 2 ** 15 - 1, 2 ** 20 - 1)
 data_deque = {}
 object_colors = {}
 deepsort = None
+import random
+
+# Define a palette of 10 colors
+color_palette = [
+    (255, 0, 0),    # Red
+    (0, 255, 0),    # Green
+    (0, 0, 255),    # Blue
+    (255, 255, 0),  # Yellow
+    (255, 0, 255),  # Magenta
+    (0, 255, 255),  # Cyan
+    (128, 0, 0),    # Maroon
+    (0, 128, 0),    # Olive
+    (0, 0, 128),    # Navy
+    (128, 128, 0)   # Teal
+]
 
 def init_tracker():
     global deepsort
@@ -66,7 +81,7 @@ def compute_color_for_labels(label, object_id):
     """
     if object_id not in object_colors:
         # Generate a random color for the object and store it in the dictionary
-        object_colors[object_id] = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
+        object_colors[object_id] = (random.choice(color_palette))
     return object_colors[object_id]
 
 def draw_border(img, pt1, pt2, color, thickness, r, d):
