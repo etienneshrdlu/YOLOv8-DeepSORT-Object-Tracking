@@ -75,7 +75,7 @@ def xyxy_to_tlwh(bbox_xyxy):
         tlwh_bboxs.append(tlwh_obj)
     return tlwh_bboxs
 
-def compute_color_for_labels(object_id):
+def compute_color_for_labels(object_id, id):
     """
     Assign a unique color to each object based on its ID.
     """
