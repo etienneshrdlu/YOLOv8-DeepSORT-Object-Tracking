@@ -152,27 +152,27 @@ def draw_boxes(img, bbox, names, object_id, identities=None, offset=(0, 0)):
 
         # get ID of object
         id = int(identities[i]) if identities is not None else 0
-        insult_list = ['gobshite','shitehawk','west brit','gom','gowlbag','ganch','melt','schnake','messer','shaper',\
+        insult_list = ['gobshite','shitehawk','west brit','gom','gowlbag','ganch','shoneen','melt','schnake','messer','shaper',\
                        'head-the-ball','dry shite','gowl','yer man','langer','geebag','lickarse','dirtbird','gowl','chancer',\
                        'dose','spoofer','headbanger','hoor','gowl','wagon','thick','bollix','dope','eejit','sap','pox','flute',\
                        'fridget','bowsie','culchie','gowl','jackeen','mickey dazzler','dosser','gouger','blow-in','clown','gombeen',\
                        'sleeveen','lick','gurrier',\
-                      'gobshite','shitehawk','west brit','gom','gowlbag','ganch','melt','schnake','messer','shaper',\
+                      'gobshite','shitehawk','west brit','gom','gowlbag','ganch','shoneen','melt','schnake','messer','shaper',\
                        'head-the-ball','dry shite','gowl','yer man','langer','geebag','lickarse','dirtbird','gowl','chancer',\
                        'dose','spoofer','headbanger','hoor','gowl','wagon','thick','bollix','dope','eejit','sap','pox','flute',\
                        'fridget','bowsie','culchie','gowl','jackeen','mickey dazzler','dosser','gouger','blow-in','clown','gombeen',\
                        'sleeveen','lick','gurrier',\
-                      'gobshite','shitehawk','west brit','gom','gowlbag','ganch','melt','schnake','messer','shaper',\
+                      'gobshite','shitehawk','west brit','gom','gowlbag','ganch','shoneen','melt','schnake','messer','shaper',\
                        'head-the-ball','dry shite','gowl','yer man','langer','geebag','lickarse','dirtbird','gowl','chancer',\
                        'dose','spoofer','headbanger','hoor','gowl','wagon','thick','bollix','dope','eejit','sap','pox','flute',\
                        'fridget','bowsie','culchie','gowl','jackeen','mickey dazzler','dosser','gouger','blow-in','clown','gombeen',\
                        'sleeveen','lick','gurrier',\
-                      'gobshite','shitehawk','west brit','gom','gowlbag','ganch','melt','schnake','messer','shaper',\
+                      'gobshite','shitehawk','west brit','gom','gowlbag','ganch','shoneen','melt','schnake','messer','shaper',\
                        'head-the-ball','dry shite','gowl','yer man','langer','geebag','lickarse','dirtbird','gowl','chancer',\
                        'dose','spoofer','headbanger','hoor','gowl','wagon','thick','bollix','dope','eejit','sap','pox','flute',\
                        'fridget','bowsie','culchie','gowl','jackeen','mickey dazzler','dosser','gouger','blow-in','clown','gombeen',\
                        'sleeveen','lick','gurrier',\
-                      'gobshite','shitehawk','west brit','gom','gowlbag','ganch','melt','schnake','messer','shaper',\
+                      'gobshite','shitehawk','west brit','gom','gowlbag','ganch','shoneen','melt','schnake','messer','shaper',\
                        'head-the-ball','dry shite','gowl','yer man','langer','geebag','lickarse','dirtbird','gowl','chancer',\
                        'dose','spoofer','headbanger','hoor','gowl','wagon','thick','bollix','dope','eejit','sap','pox','flute',\
                        'fridget','bowsie','culchie','gowl','jackeen','mickey dazzler','dosser','gouger','blow-in','clown','gombeen',\
